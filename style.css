@@ -1,0 +1,349 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #05030d;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, #5410a855, transparent 35%),
+        radial-gradient(circle at 80% 70%, #a000ff33, transparent 35%);
+    z-index: -1;
+    animation: backgroundMove 8s infinite alternate;
+}
+
+@keyframes backgroundMove {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #d4aaff;
+    text-shadow: 0 0 15px #a64dff;
+}
+
+.status {
+    color: #69ffb4;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+main {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.welcome-card {
+    width: 100%;
+    max-width: 520px;
+    padding: 42px 30px;
+    text-align: center;
+    background: rgba(17, 11, 35, 0.9);
+    border: 1px solid #a65aff;
+    border-radius: 22px;
+    box-shadow:
+        0 0 15px #8b35ff55,
+        0 0 45px #8b35ff33,
+        inset 0 0 20px #8b35ff11;
+    animation: appear 0.6s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 2px;
+    background: #e6c4ff;
+    box-shadow: 0 0 15px #bd8cff;
+    animation: borderGlow 4s infinite;
+}
+
+@keyframes borderGlow {
+    to { left: 150%; }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.scanner-icon {
+    font-size: 48px;
+    color: #bd8cff;
+    margin-bottom: 18px;
+    text-shadow: 0 0 20px #a64dff;
+    animation: iconPulse 2s infinite alternate;
+}
+
+@keyframes iconPulse {
+    to { transform: rotate(45deg) scale(1.15); }
+}
+
+.small-heading {
+    color: #c49aff;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: 42px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+    text-shadow: 0 0 18px #a64dff66;
+    animation: glitch 3s infinite;
+}
+
+h1 span {
+    color: #d0a0ff;
+    text-shadow: 0 0 18px #a64dff;
+}
+
+@keyframes glitch {
+    0%, 90%, 100% {
+        transform: translate(0);
+        text-shadow: 0 0 18px #a64dff66;
+    }
+    91% {
+        transform: translate(-2px, 1px);
+        text-shadow: 3px 0 #00ffff, -3px 0 #ff00cc;
+    }
+    93% {
+        transform: translate(2px, -1px);
+        text-shadow: -3px 0 #00ffff, 3px 0 #ff00cc;
+    }
+    95% {
+        transform: translate(0);
+        text-shadow: 0 0 18px #a64dff66;
+    }
+}
+
+.subtitle {
+    color: #c3bfd1;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #8951c9;
+    background: #100c20;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 22px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #d2aaff;
+    box-shadow: 0 0 18px #a64dff88;
+}
+
+input::placeholder {
+    color: #898198;
+}
+
+.choose-text {
+    color: #c49aff;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.choices {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+button {
+    padding: 15px 22px;
+    border: 1px solid #bd8cff;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #792bd1, #32135d);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 12px #8b35ff33;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 0 25px #a64dff99;
+}
+
+.warning {
+    color: #a59bb8;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+}
+
+#finalMessage {
+    margin: 25px 0;
+    line-height: 1.8;
+    animation: revealMessage 0.8s ease;
+}
+
+@keyframes revealMessage {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+        filter: blur(8px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+#finalMessage h2 {
+    color: #e0bdff;
+    font-size: 27px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 18px #b65cff;
+    animation: nameGlitch 2.5s infinite;
+}
+
+@keyframes nameGlitch {
+    0%, 92%, 100% {
+        transform: translateX(0);
+        text-shadow: 0 0 18px #b65cff;
+    }
+    94% {
+        transform: translateX(-2px);
+        text-shadow: 3px 0 cyan, -3px 0 magenta;
+    }
+    96% {
+        transform: translateX(2px);
+        text-shadow: -3px 0 cyan, 3px 0 magenta;
+    }
+}
+
+#finalMessage p {
+    color: #eee4ff;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.creator {
+    color: #a69bb7;
+    font-size: 11px;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    margin: 30px 0 20px;
+}
+
+.creator strong {
+    color: #d2aaff;
+    font-size: 15px;
+    text-shadow: 0 0 12px #a64dff;
+}
+
+footer {
+    text-align: center;
+    color: #766d87;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 20px;
+}
+
+.scan-line {
+    width: 100%;
+    height: 4px;
+    background: #bd8cff;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #bd8cff;
+    animation: scanning 1.5s infinite ease-in-out alternate;
+}
+
+@keyframes scanning {
+    from {
+        transform: scaleX(0.1);
+        opacity: 0.4;
+    }
+    to {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        padding: 20px 5%;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .welcome-card {
+        padding: 35px 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .choices {
+        flex-direction: column;
+    }
+
+    .choices button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE UNKNOWN | Secret Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-glow"></div>
+
+    <header>
+        <div class="logo">◈ THE UNKNOWN</div>
+
+        <div class="system-info">
+            <div class="status">● SYSTEM ONLINE</div>
+            <div class="live-clock" id="liveClock">00:00:00</div>
+            <div class="system-date" id="systemDate">LOADING DATE...</div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="welcome-card" id="welcome">
+            <div class="scanner-icon">◈</div>
+            <p class="small-heading">CLASSIFIED EXPERIENCE</p>
+            <h1>THE <span>UNKNOWN</span></h1>
+            <p class="subtitle">One name. One secret. An unexpected surprise.</p>
+
+            <input type="text" id="playerName"
+                placeholder="Enter your name..." maxlength="30">
+
+            <p class="choose-text">WHO ARE YOU?</p>
+
+            <div class="choices">
+                <button type="button" onclick="startExperience('boy')">BOY 😎</button>
+                <button type="button" onclick="startExperience('girl')">GIRL 💗</button>
+            </div>
+
+            <p class="warning">⚠ ENTER THE UNKNOWN AT YOUR OWN RISK</p>
+        </section>
+
+        <section class="welcome-card hidden" id="scanning">
+            <div class="scanner-icon">◈</div>
+            <h1>SCANNING...</h1>
+            <p class="subtitle">Searching classified information...</p>
+            <div class="scan-line"></div>
+        </section>
+
+        <section class="welcome-card hidden" id="result">
+            <p class="small-heading">SECRET UNLOCKED</p>
+            <h1>THE <span>REVEAL</span></h1>
+            <div id="finalMessage"></div>
+
+            <p class="creator">
+                CREATED & DEVELOPED BY<br>
+                <strong>MEET PATEL</strong>
+            </p>
+
+            <button type="button" onclick="restartExperience()">
+                TRY ANOTHER NAME ↻
+            </button>
+        </section>
+
+        <!-- SECRET ADMIN PANEL -->
+        <section class="welcome-card hidden" id="adminPanel">
+            <p class="small-heading">RESTRICTED ACCESS</p>
+            <h1>SECRET <span>ADMIN</span></h1>
+
+            <div class="admin-details">
+                <p>CREATOR: <strong>MEET PATEL</strong></p>
+                <p>PROJECT: <strong>THE UNKNOWN</strong></p>
+                <p>VERSION: <strong>1.0</strong></p>
+                <p>SYSTEM: <strong>ONLINE</strong></p>
+                <p>TOTAL SCANS: <strong id="totalScans">0</strong></p>
+            </div>
+
+            <button type="button" onclick="closeAdminPanel()">
+                CLOSE PANEL
+            </button>
+        </section>
+
+    </main>
+
+    <footer>
+        CYBER SHADOW TECHNOLOGY | THE UNKNOWN © 2026
+    </footer>
+
+    <!-- Hidden admin shortcut: press Ctrl + Shift + A -->
+    <script src="script.js"></script>
+
+</body>
+</html>
