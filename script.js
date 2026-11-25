@@ -1,6 +1,9 @@
 
-// THE UNKNOWN - 100+ REACTION SYSTEM
+// ========================================
+// THE UNKNOWN - COMPLETE SCRIPT
+// ========================================
 
+// PERSONALIZED BOY MESSAGES
 const boyMessages = {
     "dhruv": ["Dhruv bhai, confidence full che, pan kaam karta karta loading thai jay che 😂", "Dhruv ni entry royal, pan planning ma thodu buffering! 😎"],
     "kartik": ["Kartik bhai, attitude premium ane excuses unlimited! 😂", "Kartik no swag alag che, pan homework kyare thase?"],
@@ -25,8 +28,12 @@ const boyMessages = {
     "sumit parmar": ["Sumit Parmar, dance floor no superstar ane masti no champion! 😂"]
 };
 
+// PERSONALIZED GIRL MESSAGES
 const girlMessages = {
-    "krishna": ["Krishna, tamari friendship ma ek alag warmth che. Always stay happy and keep shining! 💗", "Krishna, tamari smile ane positive vibe divas special banavi de che. ✨"],
+    "krishna": [
+        "Krishna, tamari friendship ma ek alag warmth che. Always stay happy and keep shining! 💗",
+        "Krishna, tamari smile ane positive vibe divas special banavi de che. ✨"
+    ],
     "bhumi": ["Bhumi, tamari simplicity ane sweet nature tamne special banave che! 💗"],
     "aneri": ["Aneri, tamari energy ane kindness ekdum lovely che! ✨"],
     "pratiksha": ["Pratiksha, tamari presence thi atmosphere happy bani jay che! 💗"],
@@ -35,109 +42,39 @@ const girlMessages = {
     "dhanshree": ["Dhanshree, tamari kindness ane confidence banne amazing che! ✨"]
 };
 
-// 100+ GIRL REACTIONS
-const girlReactions = [
-    "OMG! WHAT A GORGEOUS ENTRY! 💗",
-    "Areyyy! Aaj toh chand pan jealous che! 🌙",
-    "Beauty with unlimited attitude! 💅",
-    "Aaj toh entry ma magic che! ✨",
-    "Princess alert! 👑",
-    "Someone just made the screen beautiful! 💖",
-    "Excuse me, beauty queen detected! 😍",
-    "Aavi entry toh movie ma pan na male! 🎬",
-    "Wow! Full-on sunshine vibes! ☀️",
-    "The definition of elegance! ✨",
-    "Aaj toh stars pan shine ochha kare! 🌟",
-    "Queen has entered the chat! 👑",
-    "Aankho ma sparkle, vibe ma magic! 💗",
-    "Stop! Too much cuteness detected! 🥹",
-    "Aaj no highlight aavi gayo! 💕",
-    "Gorgeousness overload! 💫",
-    "The vibe just became 100 times better!",
-    "Fashion and confidence: perfect combo!",
-    "Hello Miss Universe! 🌍",
-    "Aaj toh camera pan happy thai gayo! 📸",
-    "Beauty mode: activated! 💗",
-    "Aavi smile mate alag fan club joie!",
-    "Sweetness level: unlimited! 🍭",
-    "Aaj toh flowers pan jealous thase! 🌸",
-    "Queen energy only! 👑",
-    "Pure positive vibes incoming!",
-    "Oho! Entry ma full sparkle! ✨",
-    "Aaje toh scene j change thai gayo!",
-    "Gorgeous alert! Everybody behave! 😂",
-    "One name, unlimited charm!",
-    "Aaj ni special guest aavi gai!",
-    "Cute vibes, classy style!",
-    "The spotlight belongs to you! 🌟",
-    "Aavi entry ne kevaay royal!",
-    "Pretty vibes loading... complete!",
-    "Aaj toh butterflies pan dance kare! 🦋",
-    "Full-on fairy tale moment!",
-    "Magic has a new name today!",
-    "Smile detected, happiness unlocked!",
-    "Aavi personality rare che!",
-    "Aaj toh background pan romantic lage!",
-    "Miss Sunshine has arrived! ☀️",
-    "Classy, confident and fabulous!",
-    "Oho! What a lovely surprise!",
-    "The queen needs no introduction!",
-    "Aaje toh flowers welcome kare! 🌷",
-    "Cute alert! System cannot handle!",
-    "Aavi vibe roj nathi malti!",
-    "The main character has arrived!",
-    "Simply iconic! 💖",
-    "Aaj ni entry ekdum dreamy!",
-    "Sparkle mode activated!",
-    "Aavi style ne salute!",
-    "Beauty and confidence together!",
-    "The room just got brighter!",
-    "Aaj toh compliment ni line lagse!",
-    "Gorgeousness at another level!",
-    "Aavi entry mate applause banta hai!",
-    "Sweet like chocolate! 🍫",
-    "Aaj no mood automatically good!",
-    "A beautiful surprise unlocked!",
-    "Queen of good vibes!",
-    "Full fairy energy! 🧚",
-    "Aavi smile priceless che!",
-    "Aaj toh moonlight pan shy thai!",
-    "The cutest plot twist!",
-    "Aavi personality ekdum unique!",
-    "Pink vibes everywhere!",
-    "Aaj toh camera focus automatic!",
-    "Aavi entry no replay joie!",
-    "Style ni walking definition!",
-    "The sparkle is real!",
-    "Aaj no favourite moment!",
-    "Elegance level: legendary!",
-    "Aavi vibe thi day special!",
-    "A smile worth a thousand compliments!",
-    "The star of this moment!",
-    "Aaj toh compliments ochha padse!",
-    "Superstar entry confirmed!",
-    "Aavi charm no jawab nathi!",
-    "The world needs more positive vibes!",
-    "Aaj ni vibe ekdum lovely!",
-    "A princess in her own story!",
-    "Confidence looks good on you!",
-    "Aavi entry mate slow motion joie!",
-    "Aaj toh sparkle ni baarish!",
-    "Lovely human detected!",
-    "Aavi personality no match nathi!",
-    "The sunshine of the screen!",
-    "Aaj toh heart says wow!",
-    "Pure magic, no filter!",
-    "Aavi entry unforgettable!",
-    "The glow is different today!",
-    "Aaj ni queen officially arrived!",
-    "A cute surprise unlocked!",
-    "Aavi style ne 10/10!",
-    "Aaj toh scene beautiful bani gayo!",
-    "One word: WOW!",
-    "Gorgeous vibes only!",
-    "The spotlight is yours!",
-    "Aavi entry mate background music perfect!"
+// 100+ UNKNOWN GIRL COMPLIMENT COMBINATIONS
+const girlStarts = [
+    "Your smile", "Your kindness", "Your positive energy",
+    "Your confidence", "Your lovely personality",
+    "Your presence", "Your cheerful nature",
+    "Your beautiful vibes", "Your friendly nature",
+    "Your uniqueness"
+];
+
+const girlMiddles = [
+    "makes every moment brighter",
+    "is something truly special",
+    "makes people feel comfortable",
+    "brings happiness everywhere",
+    "deserves appreciation",
+    "makes ordinary moments memorable",
+    "is your biggest charm",
+    "makes your personality shine",
+    "is genuinely wonderful",
+    "makes you one of a kind"
+];
+
+const girlEnds = [
+    "Keep shining! 💗",
+    "Never stop being yourself! 🌸",
+    "You deserve all the happiness! ✨",
+    "Stay amazing! 🦋",
+    "Keep spreading positivity! ❤️",
+    "You are appreciated! 🌷",
+    "Never underestimate your charm! 💕",
+    "Stay happy always! ☀️",
+    "Keep smiling! 😊",
+    "You are truly special! 💖"
 ];
 
 // 100+ BOY REACTIONS
@@ -245,19 +182,116 @@ const boyReactions = [
     "Swag unlimited, tension zero!"
 ];
 
-// NO REPEATED REACTIONS UNTIL LIST FINISHES
-const usedReactions = {
-    boy: [],
-    girl: []
-};
+// 100+ GIRL REACTIONS
+const girlReactions = [
+    "OMG! WHAT A GORGEOUS ENTRY! 💗",
+    "Areyyy! Aaj toh chand pan jealous che! 🌙",
+    "Beauty with unlimited attitude! 💅",
+    "Aaj toh entry ma magic che! ✨",
+    "Princess alert! 👑",
+    "Someone just made the screen beautiful! 💖",
+    "Excuse me, beauty queen detected!",
+    "Aavi entry toh movie ma pan na male! 🎬",
+    "Wow! Full-on sunshine vibes! ☀️",
+    "The definition of elegance! ✨",
+    "Aaj toh stars pan shine ochha kare! 🌟",
+    "Queen has entered the chat! 👑",
+    "Aankho ma sparkle, vibe ma magic! 💗",
+    "Stop! Too much cuteness detected!",
+    "Aaj no highlight aavi gayo! 💕",
+    "Gorgeousness overload! 💫",
+    "The vibe just became 100 times better!",
+    "Fashion and confidence: perfect combo!",
+    "Hello Miss Universe! 🌍",
+    "Aaj toh camera pan happy thai gayo! 📸",
+    "Beauty mode: activated! 💗",
+    "Aavi smile mate alag fan club joie!",
+    "Sweetness level: unlimited! 🍭",
+    "Aaj toh flowers pan jealous thase! 🌸",
+    "Queen energy only! 👑",
+    "Pure positive vibes incoming!",
+    "Oho! Entry ma full sparkle! ✨",
+    "Aaje toh scene j change thai gayo!",
+    "Gorgeous alert! Everybody behave!",
+    "One name, unlimited charm!",
+    "Aaj ni special guest aavi gai!",
+    "Cute vibes, classy style!",
+    "The spotlight belongs to you! 🌟",
+    "Aavi entry ne kevaay royal!",
+    "Pretty vibes loading... complete!",
+    "Aaj toh butterflies pan dance kare! 🦋",
+    "Full-on fairy tale moment!",
+    "Magic has a new name today!",
+    "Smile detected, happiness unlocked!",
+    "Aavi personality rare che!",
+    "Miss Sunshine has arrived! ☀️",
+    "Classy, confident and fabulous!",
+    "Oho! What a lovely surprise!",
+    "The queen needs no introduction!",
+    "Aaje toh flowers welcome kare! 🌷",
+    "Cute alert! System cannot handle!",
+    "Aavi vibe roj nathi malti!",
+    "The main character has arrived!",
+    "Simply iconic! 💖",
+    "Aaj ni entry ekdum dreamy!",
+    "Sparkle mode activated!",
+    "Aavi style ne salute!",
+    "Beauty and confidence together!",
+    "The room just got brighter!",
+    "Aaj toh compliment ni line lagse!",
+    "Gorgeousness at another level!",
+    "Aavi entry mate applause banta hai!",
+    "Sweet like chocolate! 🍫",
+    "Aaj no mood automatically good!",
+    "A beautiful surprise unlocked!",
+    "Queen of good vibes!",
+    "Full fairy energy! 🧚",
+    "Aavi smile priceless che!",
+    "The cutest plot twist!",
+    "Aavi personality ekdum unique!",
+    "Pink vibes everywhere!",
+    "Aavi entry no replay joie!",
+    "Style ni walking definition!",
+    "The sparkle is real!",
+    "Aaj no favourite moment!",
+    "Elegance level: legendary!",
+    "Aavi vibe thi day special!",
+    "A smile worth a thousand compliments!",
+    "The star of this moment!",
+    "Aaj toh compliments ochha padse!",
+    "Superstar entry confirmed!",
+    "Aavi charm no jawab nathi!",
+    "The world needs more positive vibes!",
+    "Aaj ni vibe ekdum lovely!",
+    "A princess in her own story!",
+    "Confidence looks good on you!",
+    "Aavi entry mate slow motion joie!",
+    "Aaj toh sparkle ni baarish!",
+    "Lovely human detected!",
+    "Aavi personality no match nathi!",
+    "The sunshine of the screen!",
+    "Pure magic, no filter!",
+    "Aavi entry unforgettable!",
+    "The glow is different today!",
+    "Aaj ni queen officially arrived!",
+    "A cute surprise unlocked!",
+    "Aavi style ne 10/10!",
+    "Aaj toh scene beautiful bani gayo!",
+    "One word: WOW!",
+    "Gorgeous vibes only!",
+    "The spotlight is yours!",
+    "Aavi entry mate background music perfect!"
+];
+
+// NO REPEATS UNTIL LIST FINISHES
+const usedReactions = { boy: [], girl: [] };
+const usedMessages = {};
 
 function getRandomReaction(gender) {
     const list = gender === "girl" ? girlReactions : boyReactions;
     const used = usedReactions[gender];
 
-    if (used.length >= list.length) {
-        used.length = 0;
-    }
+    if (used.length >= list.length) used.length = 0;
 
     const available = list
         .map((message, index) => ({ message, index }))
@@ -265,8 +299,43 @@ function getRandomReaction(gender) {
 
     const selected = available[Math.floor(Math.random() * available.length)];
     used.push(selected.index);
-
     return selected.message;
+}
+
+// UNIQUE UNKNOWN GIRL COMPLIMENT
+function getUnknownGirlMessage(name) {
+    const key = name.toLowerCase().trim();
+
+    if (!usedMessages[key]) usedMessages[key] = 0;
+
+    const count = usedMessages[key]++;
+    const start = (count * 7 + key.length) % girlStarts.length;
+    const middle = (count * 3 + key.length) % girlMiddles.length;
+    const end = (count * 9 + key.length) % girlEnds.length;
+
+    return `${girlStarts[start]} ${girlMiddles[middle]}. ${girlEnds[end]}`;
+}
+
+// PERSONALIZED MESSAGE
+function getMessage(name, gender) {
+    const cleanName = name.toLowerCase().trim().replace(/\s+/g, " ");
+    const collection = gender === "boy" ? boyMessages : girlMessages;
+    const messages = collection[cleanName];
+
+    if (!messages) {
+        if (gender === "girl") return getUnknownGirlMessage(cleanName);
+
+        return "Unknown personality detected! 😎 Tamari story haju classified che!";
+    }
+
+    const key = gender + "-" + cleanName;
+
+    if (!usedMessages[key]) usedMessages[key] = 0;
+
+    const selected = usedMessages[key] % messages.length;
+    usedMessages[key]++;
+
+    return messages[selected];
 }
 
 // AUDIO SYSTEM
@@ -275,9 +344,7 @@ function playTone(frequency, startTime, duration, type = "sine", volume = 0.10) 
     if (!AudioClass) return;
 
     try {
-        if (!window.unknownAudio) {
-            window.unknownAudio = new AudioClass();
-        }
+        if (!window.unknownAudio) window.unknownAudio = new AudioClass();
 
         const audio = window.unknownAudio;
         if (audio.state === "suspended") audio.resume();
@@ -316,9 +383,7 @@ function playBoySound() {
 
 function playCyberSound(type) {
     const notes = type === "scan" ? [400, 600, 800] : [650, 850, 1100];
-    notes.forEach((note, index) => {
-        playTone(note, index * 0.13, 0.20);
-    });
+    notes.forEach((note, index) => playTone(note, index * 0.13, 0.20));
 }
 
 // LIVE CLOCK
@@ -344,7 +409,7 @@ function updateLiveClock() {
     }).toUpperCase();
 }
 
-// PARTICLES
+// PARTICLE BACKGROUND
 function createParticleBackground() {
     if (document.getElementById("particleCanvas")) return;
 
@@ -430,41 +495,13 @@ function increaseTotalScans() {
 
 // SAFE TEXT
 function escapeHTML(value) {
-    return value.replace(/[&<>"']/g, character => ({
+    return String(value).replace(/[&<>"']/g, character => ({
         "&": "&amp;",
         "<": "&lt;",
         ">": "&gt;",
         '"': "&quot;",
         "'": "&#39;"
     })[character]);
-}
-
-// PERSONALIZED MESSAGE
-function getMessage(name, gender) {
-    const cleanName = name.toLowerCase().trim();
-    const collection = gender === "boy" ? boyMessages : girlMessages;
-    const messages = collection[cleanName];
-
-    if (!messages) {
-        return gender === "boy"
-            ? "Unknown personality detected! 😎 Tamari story haju classified che!"
-            : "A beautiful mystery! 💗 Keep shining and spreading happiness!";
-    }
-
-    if (!usedMessages[cleanName]) usedMessages[cleanName] = [];
-
-    if (usedMessages[cleanName].length >= messages.length) {
-        usedMessages[cleanName] = [];
-    }
-
-    const available = messages
-        .map((message, index) => ({ message, index }))
-        .filter(item => !usedMessages[cleanName].includes(item.index));
-
-    const selected = available[Math.floor(Math.random() * available.length)];
-    usedMessages[cleanName].push(selected.index);
-
-    return selected.message;
 }
 
 // START EXPERIENCE
@@ -482,29 +519,32 @@ function startExperience(gender) {
 
     document.getElementById("welcome").classList.add("hidden");
     document.getElementById("result").classList.add("hidden");
-    document.getElementById("adminPanel").classList.add("hidden");
-    document.getElementById("scanning").classList.remove("hidden");
+
+    const admin = document.getElementById("adminPanel");
+    if (admin) admin.classList.add("hidden");
+
+    const scanning = document.getElementById("scanning");
+    if (scanning) scanning.classList.remove("hidden");
 
     setTimeout(() => {
-        document.getElementById("scanning").classList.add("hidden");
+        if (scanning) scanning.classList.add("hidden");
 
         const reaction = getRandomReaction(gender);
         const message = getMessage(name, gender);
 
         document.getElementById("finalMessage").innerHTML = `
-            <h2>HEY, ${escapeHTML(name).toUpperCase()}!</h2>
-            <p class="entry-reaction">${reaction}</p>
-            <p>${message}</p>
+            <h2>HEY, ${escapeHTML(name.toUpperCase())}!</h2>
+            <p class="entry-reaction">${escapeHTML(reaction)}</p>
+            <p>${escapeHTML(message)}</p>
         `;
 
-        document.getElementById("totalScans").textContent = increaseTotalScans();
+        const total = document.getElementById("totalScans");
+        if (total) total.textContent = increaseTotalScans();
+
         document.getElementById("result").classList.remove("hidden");
 
-        if (gender === "girl") {
-            playGirlTune();
-        } else {
-            playBoySound();
-        }
+        if (gender === "girl") playGirlTune();
+        else playBoySound();
 
     }, 1800);
 }
@@ -519,17 +559,25 @@ function restartExperience() {
 // ADMIN PANEL
 function openAdminPanel() {
     document.getElementById("welcome").classList.add("hidden");
-    document.getElementById("scanning").classList.add("hidden");
+
+    const scanning = document.getElementById("scanning");
+    if (scanning) scanning.classList.add("hidden");
+
     document.getElementById("result").classList.add("hidden");
 
-    document.getElementById("totalScans").textContent = getTotalScans();
-    document.getElementById("adminPanel").classList.remove("hidden");
+    const total = document.getElementById("totalScans");
+    if (total) total.textContent = getTotalScans();
+
+    const admin = document.getElementById("adminPanel");
+    if (admin) admin.classList.remove("hidden");
 
     playCyberSound("reveal");
 }
 
 function closeAdminPanel() {
-    document.getElementById("adminPanel").classList.add("hidden");
+    const admin = document.getElementById("adminPanel");
+    if (admin) admin.classList.add("hidden");
+
     document.getElementById("welcome").classList.remove("hidden");
 }
 
@@ -545,8 +593,6 @@ document.addEventListener("DOMContentLoaded", function () {
             openAdminPanel();
         }
 
-        if (event.key === "Escape") {
-            closeAdminPanel();
-        }
+        if (event.key === "Escape") closeAdminPanel();
     });
 });
